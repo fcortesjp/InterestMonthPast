@@ -27,10 +27,10 @@ namespace InterestMonthPast
             {
                 Console.WriteLine("Este Programa Calcula Valores de rendimiento con base en\na) un capital\nb) tiempo(meses) y\nc) una tasa de 0.07%");
                 Console.Write("Ingrese capital: ");
-                string baseTicketPriceStr = Console.ReadLine();
+                string kapitalStr = Console.ReadLine();
 
                 // revise si el precio esta en blanco o nulo
-                if (string.IsNullOrWhiteSpace(baseTicketPriceStr))
+                if (string.IsNullOrWhiteSpace(kapitalStr))
                 {
                     //si es asi, indique mensaje de error
                     Console.WriteLine("Error: El capital no puede estar en blanco");
@@ -39,7 +39,7 @@ namespace InterestMonthPast
                 }
                 // revise si el precio puede ser un numero double
                 values.kapital = 0.0;
-                bool canBeDouble = double.TryParse(baseTicketPriceStr, out values.kapital);
+                bool canBeDouble = double.TryParse(kapitalStr, out values.kapital);
                 if (canBeDouble == false)
                 {
                     //si es asi, indique mensaje de error
@@ -65,10 +65,10 @@ namespace InterestMonthPast
             while (true)
             {
                 Console.Write("Ingrese meses: ");
-                string baseTicketPriceStr = Console.ReadLine();
+                string monthsStr = Console.ReadLine();
 
                 // revise si el precio esta en blanco o nulo
-                if (string.IsNullOrWhiteSpace(baseTicketPriceStr))
+                if (string.IsNullOrWhiteSpace(monthsStr))
                 {
                     //si es asi, indique mensaje de error
                     Console.WriteLine("Error: los meses no puede estar en blanco");
@@ -77,7 +77,7 @@ namespace InterestMonthPast
                 }
                 // revise si el precio puede ser un numero double
                 values.months = 0;
-                bool canBeInt = int.TryParse(baseTicketPriceStr, out values.months);
+                bool canBeInt = int.TryParse(monthsStr, out values.months);
                 if (canBeInt == false)
                 {
                     //si es asi, indique mensaje de error
